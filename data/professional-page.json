@@ -1,39 +1,24 @@
 {
   "hero": {
-    "badge": {
-      "label": "Professional Render Mode"
-    },
-    "title": "AI & Backend Engineer",
-    "subtitle": "Building robust, scalable systems that translate complex data into business impact.",
-    "focusPoints": [
-      "My focus is on cloud architecture, AI pipelines, and crafting high-performance developer tools.",
-      "Partnering with leaders to translate complex data into resilient platforms that drive measurable outcomes."
-    ],
-    "primaryCta": {
-      "label": "View Projects",
-      "href": "#projects",
-      "ariaLabel": "View projects"
-    },
-    "secondaryCta": {
-      "label": "Connect with Me",
-      "href": "#contact",
-      "ariaLabel": "Connect with me"
-    },
-    "infoPanel": {
-      "metaLabel": "Currently",
-      "headline": "Designing resilient systems",
-      "body": "Focused on building AI-powered platforms and operational tooling that scale from prototype to production without sacrificing developer velocity.",
-      "stats": [
-        {
-          "label": "Core Stack",
-          "value": "Next.js · GCP"
-        },
-        {
-          "label": "Specialty",
-          "value": "AI Pipelines"
-        }
+    "name": "Dillon Khanna",
+    "jobTitle": "Software Engineer",
+    "description": "Building robust, scalable systems that translate complex ideas into real-world impact. I work across the full technology stack, from AI experiments to production infrastructure, always focused on creating tools that solve meaningful problems.",
+    "techFocus": {
+      "headline": "Building with a modern, scalable toolchain.",
+      "summary": "Focused on shipping resilient platforms with thoughtfully selected technology.",
+      "skills": [
+        "React",
+        "Python",
+        "AI/ML",
+        "Next.js",
+        "PostgreSQL",
+        "Docker",
+        "AWS",
+        "GCP",
+        "FastAPI"
       ]
-    }
+    },
+    "scrollTarget": "#projects"
   },
   "projects": [
     {
