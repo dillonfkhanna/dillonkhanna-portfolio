@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import FloatingHeader from "@/components/FloatingHeader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
           className="noise-overlay pointer-events-none fixed inset-0 z-50 h-screen w-screen opacity-[0.03]"
           aria-hidden="true"
         />
+        <FloatingHeader />
         {children}
       </body>
     </html>
