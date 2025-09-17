@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "title": "AI & Backend Engineer",
+    "subtitle": "Building robust, scalable systems that translate complex data into business impact. My focus is on cloud architecture, AI pipelines, and crafting high-performance developer tools."
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "AI Document Management Platform",
+      "result": "RESULT → 95% reduction in manual data entry",
+      "description": "A RAG pipeline to create an intelligent, searchable knowledge base from user documents.",
+      "tags": ["Next.js", "GCP", "Vector DB"]
+    }
+  ],
+  "careerPath": [
+    {
+      "id": 1,
+      "company": "Miami University",
+      "role": "Teaching Assistant"
+    }
+  ],
+  "principles": [
+    {
+      "id": 1,
+      "title": "Scale Through Simplicity",
+      "description": "The most scalable systems follow simple patterns applied consistently. Complex architectures often collapse under their own weight—elegant ones adapt and grow."
+    }
+  ]
+}
