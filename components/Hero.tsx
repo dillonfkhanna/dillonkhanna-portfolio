@@ -1,126 +1,78 @@
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
-interface Cta {
-  label: string;
-  href: string;
-  ariaLabel?: string;
-}
-
-interface HeroStatsItem {
-  label: string;
-  value: string;
-}
-
-interface HeroInfoPanel {
-  metaLabel: string;
+interface TechFocus {
   headline: string;
-  body: string;
-  stats: HeroStatsItem[];
+  summary: string;
+  skills: string[];
 }
 
 interface HeroProps {
-  badgeLabel: string;
-  title: string;
-  subtitle: string;
-  focusPoints: string[];
-  primaryCta: Cta;
-  secondaryCta: Cta;
-  infoPanel: HeroInfoPanel;
+  name: string;
+  jobTitle: string;
+  description: string;
+  techFocus: TechFocus;
+  scrollTarget: string;
 }
 
-const accentTitle = (title: string) => {
-  if (!title.includes("&")) {
-    return { primary: title, accent: "" };
-  }
-
-  const [primary, accent] = title.split("&").map((part) => part.trim());
-  return { primary, accent };
-};
-
 export default function Hero({
-  badgeLabel,
-  title,
-  subtitle,
-  focusPoints,
-  primaryCta,
-  secondaryCta,
-  infoPanel,
+  name,
+  jobTitle,
+  description,
+  techFocus,
+  scrollTarget,
 }: HeroProps) {
-  const { primary, accent } = accentTitle(title);
+  const marqueeItems = [...techFocus.skills, ...techFocus.skills];
 
   return (
-    <section className="relative isolate overflow-hidden rounded-3xl border border-slate-200/60 bg-white/80 p-10 shadow-xl shadow-slate-900/5 ring-1 ring-slate-900/5 backdrop-blur-xl">
-      <div
-        className="absolute inset-y-0 -right-24 hidden h-[140%] w-72 -rotate-12 transform bg-gradient-to-b from-sky-400/70 via-teal-300/60 to-emerald-400/70 blur-3xl md:block"
-        aria-hidden="true"
-      />
-
-      <div className="relative flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
-        <div className="max-w-xl space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/60 bg-sky-50 px-4 py-1 text-sm font-medium text-sky-900 shadow-sm shadow-sky-100">
-            <Sparkles className="h-4 w-4" aria-hidden="true" />
-            <span>{badgeLabel}</span>
-          </div>
-
-          <h1 className="text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
-            {primary}
-            {accent ? (
-              <span className="ml-3 inline-block bg-gradient-to-r from-sky-500 via-blue-500 to-emerald-400 bg-clip-text font-bold text-transparent">
-                &amp; {accent}
-              </span>
-            ) : null}
+    <section className="relative flex min-h-fit flex-col justify-center gap-16 pt-20 sm:pt-24 lg:min-h-[calc(100vh-12rem)] lg:pt-12">
+      <div className="grid grid-cols-1 items-center gap-10 md:gap-12 lg:grid-cols-3">
+        <div className="lg:col-span-2 text-center lg:text-left">
+          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
+            {name}
           </h1>
-
-          <p className="text-lg leading-relaxed text-slate-600">{subtitle}</p>
-
-          <div className="space-y-3 text-lg leading-relaxed text-slate-600">
-            {focusPoints.map((point) => (
-              <p
-                key={point}
-                className="rounded-2xl border border-slate-200/70 bg-white/70 px-4 py-3 shadow-sm shadow-slate-200/60"
-              >
-                {point}
-              </p>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap gap-3">
-            <a
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/40 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500"
-              href={primaryCta.href}
-              aria-label={primaryCta.ariaLabel}
-            >
-              {primaryCta.label}
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm shadow-slate-200/80 transition hover:border-slate-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
-              href={secondaryCta.href}
-              aria-label={secondaryCta.ariaLabel}
-            >
-              {secondaryCta.label}
-            </a>
-          </div>
+          <h2 className="mt-3 text-lg font-medium text-slate-600 sm:mt-4 sm:text-xl lg:text-2xl">
+            {jobTitle}
+          </h2>
+          <p className="mt-6 text-base text-slate-600 sm:text-lg lg:max-w-2xl">
+            {description}
+          </p>
         </div>
 
-        <div className="glass-pane relative mt-6 flex w-full max-w-xs flex-col gap-4 rounded-3xl p-6 text-sm text-slate-700 shadow-lg shadow-slate-900/10 md:mt-0">
-          <div className="text-xs uppercase tracking-[0.3em] text-slate-500">
-            {infoPanel.metaLabel}
-          </div>
-          <div className="text-lg font-semibold text-slate-900">{infoPanel.headline}</div>
-          <p className="text-sm leading-relaxed text-slate-600">{infoPanel.body}</p>
-          <div className="grid grid-cols-2 gap-3 text-left text-xs uppercase text-slate-500">
-            {infoPanel.stats.map((item) => (
-              <div
-                key={`${item.label}-${item.value}`}
-                className="rounded-2xl border border-slate-200/60 bg-white/70 p-3 shadow-sm"
-              >
-                <div className="text-[0.7rem] font-medium text-slate-500">{item.label}</div>
-                <div className="mt-1 text-sm font-semibold text-slate-900">{item.value}</div>
+        <div className="w-full">
+          <div className="glass-pane rounded-2xl p-5 sm:p-6">
+            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-slate-500 sm:text-xs">
+              Tech Focus
+            </p>
+            <p className="mt-3 text-base font-semibold text-slate-800 sm:text-lg">
+              {techFocus.headline}
+            </p>
+            <p className="mt-2 text-sm text-slate-600 sm:text-base">{techFocus.summary}</p>
+            <hr className="my-4 border-slate-200/70" />
+            <div className="tech-scroll-container py-1 sm:py-2">
+              <div className="tech-scroll flex min-w-max gap-4">
+                {marqueeItems.map((skill, index) => (
+                  <span
+                    key={`${skill}-${index}`}
+                    className="tech-scroll-item text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 sm:text-sm"
+                    aria-hidden={index >= techFocus.skills.length}
+                  >
+                    {skill}
+                  </span>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
+      </div>
+
+      <div className="mt-12 sm:mt-16 text-center">
+        <a
+          href={scrollTarget}
+          className="inline-flex items-center justify-center text-slate-500 transition hover:text-slate-700"
+          aria-label="Scroll to highlighted section"
+        >
+          <ArrowDown className="h-6 w-6 sm:h-7 sm:w-7 animate-bounce" aria-hidden="true" />
+        </a>
       </div>
     </section>
   );
