@@ -66,7 +66,7 @@ const FloatingHeader: React.FC = () => {
             <Github className="h-5 w-5" aria-hidden="true" />
           </a>
           <a
-            href="https://www.linkedin.com/in/dillonkhanna/"
+            href="https://www.linkedin.com/in/dillon-khanna/"
             target="_blank"
             rel="noreferrer"
             className="inline-flex h-9 w-9 items-center justify-center rounded-full text-slate-600 transition hover:bg-black/5"
