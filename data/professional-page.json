@@ -1,7 +1,39 @@
 {
   "hero": {
+    "badge": {
+      "label": "Professional Render Mode"
+    },
     "title": "AI & Backend Engineer",
-    "subtitle": "Building robust, scalable systems that translate complex data into business impact. My focus is on cloud architecture, AI pipelines, and crafting high-performance developer tools."
+    "subtitle": "Building robust, scalable systems that translate complex data into business impact.",
+    "focusPoints": [
+      "My focus is on cloud architecture, AI pipelines, and crafting high-performance developer tools.",
+      "Partnering with leaders to translate complex data into resilient platforms that drive measurable outcomes."
+    ],
+    "primaryCta": {
+      "label": "View Projects",
+      "href": "#projects",
+      "ariaLabel": "View projects"
+    },
+    "secondaryCta": {
+      "label": "Connect with Me",
+      "href": "#contact",
+      "ariaLabel": "Connect with me"
+    },
+    "infoPanel": {
+      "metaLabel": "Currently",
+      "headline": "Designing resilient systems",
+      "body": "Focused on building AI-powered platforms and operational tooling that scale from prototype to production without sacrificing developer velocity.",
+      "stats": [
+        {
+          "label": "Core Stack",
+          "value": "Next.js · GCP"
+        },
+        {
+          "label": "Specialty",
+          "value": "AI Pipelines"
+        }
+      ]
+    }
   },
   "projects": [
     {
