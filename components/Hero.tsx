@@ -22,6 +22,7 @@ export default function Hero({
   scrollTarget,
 }: HeroProps) {
   const marqueeItems = [...techFocus.skills, ...techFocus.skills];
+  const marqueeDuration = Math.max(12, techFocus.skills.length * 2);
 
   return (
     <section className="relative flex min-h-fit flex-col justify-center gap-16 pt-20 sm:pt-24 lg:min-h-[calc(100vh-12rem)] lg:pt-12">
@@ -49,7 +50,10 @@ export default function Hero({
             <p className="mt-2 text-sm text-slate-600 sm:text-base">{techFocus.summary}</p>
             <hr className="my-4 border-slate-200/70" />
             <div className="tech-scroll-container py-1 sm:py-2">
-              <div className="tech-scroll flex min-w-max gap-4">
+              <div
+                className="tech-scroll flex min-w-max items-center"
+                style={{ animationDuration: `${marqueeDuration}s` }}
+              >
                 {marqueeItems.map((skill, index) => (
                   <span
                     key={`${skill}-${index}`}

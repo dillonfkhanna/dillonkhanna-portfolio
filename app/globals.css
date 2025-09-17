@@ -39,6 +39,12 @@
   .tech-scroll-item {
     @apply flex-shrink-0 whitespace-nowrap;
   }
+
+  .tech-scroll-item::after {
+    content: "•";
+    margin-inline: 0.75rem;
+    color: rgba(100, 116, 139, 0.55);
+  }
 }
 
 @keyframes tech-scroll {
