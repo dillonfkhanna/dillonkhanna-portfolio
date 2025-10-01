@@ -1,3 +1,6 @@
+"use client";
+
+import { useCallback } from "react";
 import { ArrowDown } from "lucide-react";
 
 interface TechFocus {
@@ -23,6 +26,18 @@ export default function Hero({
 }: HeroProps) {
   const marqueeItems = [...techFocus.skills, ...techFocus.skills];
   const marqueeDuration = Math.max(12, techFocus.skills.length * 2);
+
+  const handleArrowClick = useCallback(
+    (event: React.MouseEvent<HTMLAnchorElement>) => {
+      event.preventDefault();
+      const target = document.querySelector(scrollTarget);
+
+      if (target instanceof HTMLElement) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    },
+    [scrollTarget]
+  );
 
   return (
     <section className="relative flex min-h-fit flex-col justify-center gap-16 pt-20 sm:pt-24 lg:min-h-[calc(100vh-12rem)] lg:pt-12">
@@ -72,6 +87,7 @@ export default function Hero({
       <div className="mt-12 sm:mt-16 text-center">
         <a
           href={scrollTarget}
+          onClick={handleArrowClick}
           className="inline-flex items-center justify-center text-slate-500 transition hover:text-slate-700"
           aria-label="Scroll to highlighted section"
         >
