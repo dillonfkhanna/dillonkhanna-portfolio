@@ -137,7 +137,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, expanded, onToggle }
 
     updateHeight();
 
-    if (typeof window !== "undefined" && "ResizeObserver" in window) {
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
+    if ("ResizeObserver" in window) {
       const observer = new ResizeObserver(updateHeight);
       observer.observe(element);
       return () => observer.disconnect();
