@@ -68,7 +68,7 @@ const LinkIcon = ({ icon }: { icon: ProjectLinkIcon }) => {
 };
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
-  const [expandedId, setExpandedId] = useState<string | null>(projects[0]?.id ?? null);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const toggleProject = useCallback(
     (projectId: string) => {
@@ -137,18 +137,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, expanded, onToggle }
 
     updateHeight();
 
-    if (typeof window === "undefined") {
+    const globalTarget =
+      typeof globalThis === "object" ? (globalThis as Window & typeof globalThis) : undefined;
+
+    if (!globalTarget) {
       return undefined;
     }
 
-    if ("ResizeObserver" in window) {
-      const observer = new ResizeObserver(updateHeight);
+    if (typeof globalTarget.ResizeObserver === "function") {
+      const observer = new globalTarget.ResizeObserver(updateHeight);
       observer.observe(element);
       return () => observer.disconnect();
     }
 
-    window.addEventListener("resize", updateHeight);
-    return () => window.removeEventListener("resize", updateHeight);
+    if (typeof globalTarget.addEventListener === "function") {
+      globalTarget.addEventListener("resize", updateHeight);
+      return () => globalTarget.removeEventListener("resize", updateHeight);
+    }
+
+    return undefined;
   }, [project.id]);
 
   return (
