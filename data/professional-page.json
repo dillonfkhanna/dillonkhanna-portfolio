@@ -22,11 +22,100 @@
   },
   "projects": [
     {
-      "id": 1,
+      "id": "ai-document-platform",
       "title": "AI Document Management Platform",
-      "result": "RESULT → 95% reduction in manual data entry",
-      "description": "A RAG pipeline to create an intelligent, searchable knowledge base from user documents.",
-      "tags": ["Next.js", "GCP", "Vector DB"]
+      "status": {
+        "label": "In Progress",
+        "tone": "amber"
+      },
+      "summary": "A RAG pipeline that transforms unstructured user documentation into a private, conversational knowledge base.",
+      "result": "95% reduction in manual data entry across pilot teams",
+      "detailSections": [
+        {
+          "title": "Technical Feat",
+          "body": "Event-driven retrieval augmented generation pipeline on GCP with chunk-level security enforcement."
+        },
+        {
+          "title": "Problem Statement",
+          "body": "Teams needed natural-language access to regulated documents without exposing data to shared or public indexes."
+        },
+        {
+          "title": "What I Built",
+          "body": "Serverless ingestion network that normalizes documents, orchestrates embeddings, and streams grounded responses with inline citations."
+        }
+      ],
+      "techStack": ["Next.js", "Cloud Run", "Pub/Sub", "PostgreSQL", "Vector DB"],
+      "links": [
+        {
+          "label": "View on GitHub",
+          "href": "https://github.com/dillonfkhanna/ai-docs-platform",
+          "icon": "github"
+        }
+      ]
+    },
+    {
+      "id": "tauri-local-search",
+      "title": "Tauri Local Search App",
+      "status": {
+        "label": "Proof of Concept",
+        "tone": "slate"
+      },
+      "summary": "A private desktop app that performs semantic search over local files without sending data to the cloud.",
+      "result": "Sub-50ms semantic retrieval on commodity hardware",
+      "detailSections": [
+        {
+          "title": "Technical Feat",
+          "body": "On-device embeddings pipeline powered by Rust and an optimized ONNX runtime."
+        },
+        {
+          "title": "Problem Statement",
+          "body": "Knowledge workers wanted AI-assisted recall for documents stored locally, while keeping content air-gapped."
+        },
+        {
+          "title": "What I Built",
+          "body": "Cross-platform desktop UI with background sync, vector index compaction, and fuzzy ranking tuned for short-form notes."
+        }
+      ],
+      "techStack": ["Rust", "Tauri", "ONNX Runtime", "Svelte"],
+      "links": [
+        {
+          "label": "View on GitHub",
+          "href": "https://github.com/dillonfkhanna/tauri-local-search",
+          "icon": "github"
+        }
+      ]
+    },
+    {
+      "id": "incident-copilot",
+      "title": "Incident Co-Pilot",
+      "status": {
+        "label": "Launched",
+        "tone": "emerald"
+      },
+      "summary": "Internal reliability tool that surfaces runbooks, metrics, and past remediation steps during live incidents.",
+      "result": "40% faster incident resolution at peak load",
+      "detailSections": [
+        {
+          "title": "Technical Feat",
+          "body": "Realtime aggregation layer that fuses observability streams with conversational search."
+        },
+        {
+          "title": "Problem Statement",
+          "body": "On-call engineers were context switching across dashboards and docs, slowing down response times during outages."
+        },
+        {
+          "title": "What I Built",
+          "body": "Unified console with adaptive prompts, runbook snippets, and auto-generated post-incident timelines."
+        }
+      ],
+      "techStack": ["React", "FastAPI", "LangChain", "TimescaleDB"],
+      "links": [
+        {
+          "label": "Read Case Study",
+          "href": "https://dillonkhanna.com/incident-copilot",
+          "icon": "external"
+        }
+      ]
     }
   ],
   "careerPath": [

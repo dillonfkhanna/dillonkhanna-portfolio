@@ -2,12 +2,32 @@ import fs from 'fs/promises';
 import path from 'path';
 
 import Hero from '@/components/Hero';
+import Projects, { type Project } from '@/components/Projects';
+
+interface TechFocus {
+  headline: string;
+  summary: string;
+  skills: string[];
+}
+
+interface HeroContent {
+  name: string;
+  jobTitle: string;
+  description: string;
+  techFocus: TechFocus;
+  scrollTarget: string;
+}
+
+interface ProfessionalPageContent {
+  hero: HeroContent;
+  projects?: Project[];
+}
 
 export default async function Home() {
   const filePath = path.join(process.cwd(), 'data', 'professional-page.json');
   const fileContents = await fs.readFile(filePath, 'utf8');
-  const content = JSON.parse(fileContents);
-  const { hero } = content;
+  const content = JSON.parse(fileContents) as ProfessionalPageContent;
+  const { hero, projects = [] } = content;
 
   return (
     <main className="mx-auto flex min-h-screen max-w-6xl flex-col gap-12 px-6 pb-16 pt-32 sm:pt-36 md:gap-16 md:px-10 md:pt-40 lg:px-12">
@@ -18,6 +38,7 @@ export default async function Home() {
         techFocus={hero.techFocus}
         scrollTarget={hero.scrollTarget}
       />
+      <Projects projects={projects} />
     </main>
   );
 }
