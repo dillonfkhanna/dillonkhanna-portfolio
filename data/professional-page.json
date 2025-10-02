@@ -118,6 +118,64 @@
       ]
     }
   ],
+  "workExperience": {
+    "heading": "Work Experience",
+    "subheading": "Recent roles where I paired strong engineering with collaborative teams.",
+    "viewPrompt": "View",
+    "timelineLabel": "Timeline",
+    "cardsLabel": "Cards",
+    "entries": [
+      {
+        "id": "perficient",
+        "company": "Perficient",
+        "role": "Associate Technical Consultant",
+        "location": "Chicago, IL (Hybrid)",
+        "start": "2025-01",
+        "end": null,
+        "dateRange": "Jan 2025 – Present",
+        "isCurrent": true,
+        "summary": "Engineering AI and data systems across healthcare and content platforms with a focus on reliability and semantics.",
+        "impact": [
+          "Built an Autogen + Azure OpenAI agent that maps proprietary models to HL7 FHIR with ~30% fully accurate mappings, lifting analyst throughput.",
+          "Shipped a resilient C# ETL that migrated 5M+ OpenText docs into SharePoint with throttled batching, retries, and secure transfer.",
+          "Designed semantic metadata search to align internal column names to FHIR concepts using vector indexing."
+        ],
+        "skills": ["Python", "C#", "GCP", "Azure", "LLMs"]
+      },
+      {
+        "id": "siemens",
+        "company": "Siemens",
+        "role": "Software Engineer Intern",
+        "location": "Chicago, IL",
+        "start": "2023-06",
+        "end": "2023-12",
+        "dateRange": "Jun 2023 – Dec 2023",
+        "isCurrent": false,
+        "summary": "Built validation tooling to de-risk controller migrations and accelerate field upgrades.",
+        "impact": [
+          "Automated round-trip schema validation to catch mapping regressions ahead of deployment windows.",
+          "Owned a test harness that unlocked faster iterations for a field-facing migration tool."
+        ],
+        "skills": ["C#", "XML", "Automation"]
+      },
+      {
+        "id": "miami",
+        "company": "Miami University",
+        "role": "Teaching Assistant, Information Systems & Analytics",
+        "location": "Oxford, OH",
+        "start": "2023-08",
+        "end": "2024-05",
+        "dateRange": "Aug 2023 – May 2024",
+        "isCurrent": false,
+        "summary": "Supported BI curriculum; evaluated Tableau/PowerBI dashboards and coached on data modeling.",
+        "impact": [
+          "Standardized rubrics alongside faculty to improve grading consistency across sections.",
+          "Mentored students on DAX measures and dimensional modeling fundamentals."
+        ],
+        "skills": ["Tableau", "PowerBI", "Teaching"]
+      }
+    ]
+  },
   "careerPath": [
     {
       "id": 1,
