@@ -33,32 +33,32 @@ type ExperienceView = "timeline" | "cards";
 
 const accentStyles: Record<WorkExperienceAccent, { dot: string; innerDot: string; ring: string; badge: string; chip: string }> = {
   blue: {
-    dot: "border-sky-300",
-    innerDot: "bg-sky-500",
-    ring: "ring-2 ring-sky-200/65",
-    badge: "bg-sky-100 text-sky-700",
-    chip: "border border-sky-100 bg-sky-50 text-sky-700",
+    dot: "border-sky-300/70",
+    innerDot: "bg-sky-400",
+    ring: "ring-2 ring-sky-200/60",
+    badge: "border border-white/30 bg-white/45 text-sky-700 backdrop-blur",
+    chip: "border border-white/25 bg-white/35 text-slate-600 backdrop-blur",
   },
   slate: {
-    dot: "border-sky-300",
-    innerDot: "bg-sky-500",
-    ring: "ring-2 ring-sky-200/65",
-    badge: "bg-sky-100 text-sky-700",
-    chip: "border border-sky-100 bg-sky-50 text-sky-700",
+    dot: "border-slate-300/70",
+    innerDot: "bg-slate-400",
+    ring: "ring-2 ring-slate-200/60",
+    badge: "border border-white/30 bg-white/45 text-slate-700 backdrop-blur",
+    chip: "border border-white/25 bg-white/35 text-slate-600 backdrop-blur",
   },
   violet: {
-    dot: "border-sky-300",
-    innerDot: "bg-sky-500",
-    ring: "ring-2 ring-sky-200/65",
-    badge: "bg-sky-100 text-sky-700",
-    chip: "border border-sky-100 bg-sky-50 text-sky-700",
+    dot: "border-violet-300/70",
+    innerDot: "bg-violet-400",
+    ring: "ring-2 ring-violet-200/60",
+    badge: "border border-white/30 bg-white/45 text-violet-700 backdrop-blur",
+    chip: "border border-white/25 bg-white/35 text-slate-600 backdrop-blur",
   },
   teal: {
-    dot: "border-sky-300",
-    innerDot: "bg-sky-500",
-    ring: "ring-2 ring-sky-200/65",
-    badge: "bg-sky-100 text-sky-700",
-    chip: "border border-sky-100 bg-sky-50 text-sky-700",
+    dot: "border-teal-300/70",
+    innerDot: "bg-teal-400",
+    ring: "ring-2 ring-teal-200/60",
+    badge: "border border-white/30 bg-white/45 text-teal-700 backdrop-blur",
+    chip: "border border-white/25 bg-white/35 text-slate-600 backdrop-blur",
   },
 };
 
@@ -121,9 +121,9 @@ const WorkExperience: React.FC<WorkExperienceContent> = ({
       </div>
 
       <div className="mt-8 flex w-full justify-center">
-        <div className="inline-flex items-center gap-3 rounded-full border border-slate-200/60 bg-white/70 px-3 py-2 shadow-sm backdrop-blur">
-          <span className="hidden text-xs font-medium text-slate-500 sm:inline">{viewPrompt}</span>
-          <div className="inline-flex rounded-full bg-slate-100 p-1">
+        <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/45 px-3 py-2 shadow-sm backdrop-blur">
+          <span className="hidden text-xs font-medium text-slate-600 sm:inline">{viewPrompt}</span>
+          <div className="inline-flex rounded-full bg-white/40 p-1 backdrop-blur">
             <ToggleButton
               icon={CalendarClock}
               label={timelineLabel}
@@ -204,8 +204,9 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ entry, open, onToggle }) =>
       >
         <span className={`h-2 w-2 rounded-full ${accent.innerDot}`} aria-hidden="true" />
       </span>
-      <article className={`glass-pane relative overflow-hidden rounded-2xl border border-slate-200/60 p-6 ring-0 transition-shadow duration-300 ${open ? accent.ring : ""}`}>
-        <div className="pointer-events-none absolute inset-0 bg-sky-100/20" aria-hidden="true" />
+      <article
+        className={`glass-pane group relative flex flex-col overflow-hidden rounded-2xl border border-white/20 p-6 transition-transform duration-300 ${open ? accent.ring : "ring-0"} hover:-translate-y-1`}
+      >
         <div className="relative z-[1] flex flex-col gap-6">
           <header className="flex flex-col gap-3 sm:grid sm:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] sm:items-start sm:gap-6">
             <div>
@@ -279,11 +280,10 @@ const CardItem: React.FC<CardItemProps> = ({ entry, open, onToggle }) => {
 
   return (
     <article
-      className={`glass-pane relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/60 p-6 transition-shadow duration-300 ${
-        open ? accent.ring : ""
+      className={`glass-pane group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/20 p-6 transition-transform duration-300 hover:-translate-y-1 ${
+        open ? accent.ring : "ring-0"
       }`}
     >
-      <div className="pointer-events-none absolute inset-0 bg-sky-100/20" aria-hidden="true" />
       <div className="relative z-[1] flex h-full flex-col">
         <header className="flex flex-col gap-3">
           <div className="flex items-start justify-between gap-4">

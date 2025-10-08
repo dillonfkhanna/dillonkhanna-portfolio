@@ -176,6 +176,93 @@
       }
     ]
   },
+  "skills": {
+    "heading": "Skills & Certifications",
+    "subheading": "A toolkit tuned for reliable, human-centered delivery.",
+    "viewModes": {
+      "primaryLabel": "Core strengths",
+      "allLabel": "Full toolkit"
+    },
+    "categories": [
+      {
+        "id": "languages",
+        "title": "Languages",
+        "icon": "Languages",
+        "summary": "Languages I lean on for systems work and storytelling with data.",
+        "highlights": ["Python", "TypeScript", "SQL"],
+        "familiar": ["C#", "Java", "C++"],
+        "tags": ["languages"]
+      },
+      {
+        "id": "backend",
+        "title": "Backend & Infrastructure",
+        "icon": "Server",
+        "summary": "Services, orchestration, and delivery patterns built for uptime.",
+        "highlights": ["FastAPI", "Node.js", "PostgreSQL", "Docker"],
+        "familiar": ["Redis", "pgvector", "Terraform", "GitHub Actions"],
+        "tags": ["backend", "data"]
+      },
+      {
+        "id": "cloud",
+        "title": "Cloud Platform",
+        "icon": "Cloud",
+        "summary": "Cloud components used to stitch together secure, scalable systems.",
+        "highlights": ["GCP", "Cloud Run", "Pub/Sub"],
+        "familiar": ["BigQuery", "Firestore", "Azure Functions", "Azure Cognitive Search"],
+        "tags": ["cloud", "data"]
+      },
+      {
+        "id": "ai",
+        "title": "AI & Information Retrieval",
+        "icon": "Bot",
+        "summary": "Applied ML capabilities for semantic search and grounded assistants.",
+        "highlights": ["Vector Search", "RAG Pipelines", "Prompt Engineering"],
+        "familiar": ["LangChain", "Autogen", "Azure OpenAI"],
+        "tags": ["ai", "data"]
+      },
+      {
+        "id": "frontend",
+        "title": "Frontend & Product UI",
+        "icon": "MonitorSmartphone",
+        "summary": "Interfaces that balance clarity with motion and accessibility.",
+        "highlights": ["React", "Next.js", "Tailwind CSS"],
+        "familiar": ["Design Systems", "Framer Motion", "Flutter"],
+        "tags": ["frontend"]
+      },
+      {
+        "id": "data",
+        "title": "Data & Analytics",
+        "icon": "ChartPie",
+        "summary": "Pipelines and tooling that surface trustworthy insight.",
+        "highlights": ["Databricks", "dbt", "Looker"],
+        "familiar": ["Power BI", "Tableau", "Great Expectations"],
+        "tags": ["data"]
+      }
+    ],
+    "certifications": [
+      {
+        "id": "databricks-de-associate",
+        "label": "Databricks Certified Data Engineer Associate",
+        "issuer": "Databricks",
+        "year": "2024",
+        "icon": "ShieldCheck"
+      },
+      {
+        "id": "databricks-da-associate",
+        "label": "Databricks Certified Data Analyst Associate",
+        "issuer": "Databricks",
+        "year": "2024",
+        "icon": "ShieldCheck"
+      },
+      {
+        "id": "scrum-at-scale",
+        "label": "Scrum@Scale Practitioner",
+        "issuer": "Scrum Inc.",
+        "year": "2023",
+        "icon": "Sparkles"
+      }
+    ]
+  },
   "careerPath": [
     {
       "id": 1,
